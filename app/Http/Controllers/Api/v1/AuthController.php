@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequset;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,11 @@ class AuthController extends Controller
             'token' => $token
         ]);
     }
+    public function getUser()
+    {
+        return new UserResource(auth()->user());
 
+    }
     public function logout()
     {
         auth()->user()->currentAccessToken()->delete();
