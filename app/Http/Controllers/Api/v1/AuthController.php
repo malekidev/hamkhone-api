@@ -39,7 +39,7 @@ class AuthController extends Controller
     public function logoutAll(){
         auth()->user()->tokens()->delete();
         return response()->json([
-            'message' => 'logout from all tokens success'
+            'message' => 'logout from all tokens successs'
         ]);
     }
 }
