@@ -29,6 +29,8 @@ class ProfileCompleteRequest extends FormRequest
             "age" => "required",
             "job" => "required",
             "phone" => "unique:profiles|required",
+            "description" => 'required'
+
         ];
     }
 }
